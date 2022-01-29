@@ -1,0 +1,82 @@
+{% extends "admin/bases.html" %}
+{% block content %}
+{% load static %}
+<!--== BODY INNER CONTAINER ==-->
+<div class="sb2-2">
+    <!--== breadcrumbs ==-->
+    <div class="sb2-2-2">
+        <ul>
+            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            </li>
+            <li class="active-bre"><a href="#"> Exam</a>
+            </li>
+            <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--== User Details ==-->
+    <div class="sb2-2-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-inn-sp">
+                    <div class="sb2-2-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="box-inn-sp">
+                                    <div class="inn-title">
+                                        <h4>Exam Details</h4>
+                                        <p>All about students like name, student id, phone, email, country, city and
+                                            more</p>
+                                    </div>
+                                    <div class="tab-inn">
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>Logo</th>
+                                                    <th>Exam Date</th>
+                                                    <th>Salary</th>
+                                                    <th>Short Description</th>
+                                                    <th>Official Notification</th>
+                                                    <th>Vacancies</th>
+                                                    <th>Reg Date</th>
+                                                    <th>Status</th>
+                                                    <th>View</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for i in exam %}
+                                                <tr>
+                                                    <td><span class="list-img"><img src="{{i.logo.url}}"
+                                                                                    alt=""></span>
+                                                    </td>
+                                                    <td><a href="#"><span class="list-enq-name"></span><span
+                                                            class="list-enq-city">{{i.exam_date}}</span></a>
+                                                    </td>
+                                                    <td>{{i.salary}}</td>
+                                                    <td>{{i.short_description}}</td>
+                                                    <td>{{i.official_website_notification}}</td>
+                                                    <td>{{i.vacancies}}</td>
+                                                    <td>{{i.registration_date}}</td>
+                                                    <td>
+                                                        <span class="label label-success">Active</span>
+                                                    </td>
+                                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

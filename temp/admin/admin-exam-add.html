@@ -1,0 +1,108 @@
+{% extends "admin/bases.html" %}
+{% block content %}
+{% load static %}
+<!--== BODY INNER CONTAINER ==-->
+<div class="sb2-2">
+    <!--== breadcrumbs ==-->
+    <div class="sb2-2-2">
+        <ul>
+            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            </li>
+            <li class="active-bre"><a href="#"> Add New Exam</a>
+            </li>
+            <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--== User Details ==-->
+    <div class="sb2-2-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-inn-sp admin-form">
+                    <div class="inn-title">
+                        <h4>New Exam</h4>
+                        <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password
+                            and more</p>
+                    </div>
+                    <div class="tab-inn">
+                        <form action="/master/" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" value="" class="validate" name="title" required>
+                                    <label class="">Exam title</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="file-field input-field col s12">
+                                    <div class="btn admin-upload-btn">
+                                        <span>Logo</span>
+                                        <input type="file" name="logo">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Event image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea name="short_desc"></textarea>
+                                    <label class="">Exam Short Descriptions</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" value="" class="validate" name="no_of_vc" required>
+                                    <label class="">No of Vacancies</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="date" value="ds" class="validate" name="exam_date" required style="padding-left:180px">
+                                    <label class="" >Exam Date</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input type="url" class="validate" value="" name="official_url" required>
+                                    <label class="">Official Website Link</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="number" value="" class="validate" name="salary">
+                                    <label class="">Salary</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="url" value="" class="validate" name="latest_url">
+                                    <label class="">Latest Updates Links</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="date" value="" class="validate" name="registration_date" style="padding-left:150px">
+                                    <label class="">Registration Date</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="file-field input-field col s12">
+                                    <div class="btn admin-upload-btn">
+                                        <span>Official Website Notification</span>
+                                        <input type="file" name="official_notification">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Event image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input
+                                            type="submit" class="waves-button-input"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
